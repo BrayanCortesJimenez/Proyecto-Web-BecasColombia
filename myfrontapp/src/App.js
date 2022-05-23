@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
+//import Modal from "./components/Modal";
+//import axios from 'axios';
+import {useState, useEffect} from 'react';
 import './App.css';
+import GetAllNEWS from './components/ArticleComponent';
+
 
 function App() {
+  const[TodasNews, setTodasNews] = useState([]);
+
+  useEffect( () => {
+    GetAllNEWS().then(setTodasNews);
+  }, []);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Noticias</h1>
+        <ul>
+          {TodasNews.map((news , index) =>(
+            <li key={index}>
+              {news.abstract};
+              <img src ={news.multimedia[0].url}/>
+            </li>
+          ))}
+        </ul>
     </div>
   );
 }
