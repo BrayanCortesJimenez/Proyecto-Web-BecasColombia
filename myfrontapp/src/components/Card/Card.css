@@ -1,0 +1,25 @@
+.newsCard {
+    list-style: none;
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem;
+}
+
+
+
+.title{
+  color: white;
+  top: 0.1rem;
+}
+
+.title:hover{
+  color: #9a6aff;
+}
+
+.newsImage{
+  border-radius: 8px;
+  box-shadow: 0 1px 8px #9a6aff40;
+  width: 350px;
+  height: 350px;
+  align-items: center;
+}

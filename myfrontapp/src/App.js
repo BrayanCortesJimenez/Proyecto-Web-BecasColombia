@@ -1,30 +1,30 @@
-
-//import Modal from "./components/Modal";
-//import axios from 'axios';
-import {useState, useEffect} from 'react';
 import './App.css';
-import GetAllNEWS from './components/ArticleComponent';
+import Abstract from './components/Noticias/Abstract';
 
 
 function App() {
-  const[TodasNews, setTodasNews] = useState([]);
-
-  useEffect( () => {
-    GetAllNEWS().then(setTodasNews);
-  }, []);
-
 
   return (
-    <div className="App">
-        <h1>Noticias</h1>
-        <ul>
-          {TodasNews.map((news , index) =>(
-            <li key={index}>
-              {news.abstract};
-              <img src ={news.multimedia[0].url}/>
-            </li>
-          ))}
-        </ul>
+    <div className='App'>
+        <header>
+
+        </header>
+        <main className='main-content'>
+          <div className='Hero'>
+
+          </div>
+          <div className='Most-popular'>
+
+          </div>
+          <div className='News'>
+            <h1 className='Title-News'>Seccion de Noticias</h1>
+            <Abstract/>
+          </div>
+          
+        </main>
+        <footer className='footer-content'>
+
+        </footer>
     </div>
   );
 }

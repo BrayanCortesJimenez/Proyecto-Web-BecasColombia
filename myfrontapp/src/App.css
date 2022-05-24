@@ -1,10 +1,11 @@
-.App {
+.main-content {
   text-align: center;
+  background-color: #1E2029;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Title-News {
+  text-align: justify;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {

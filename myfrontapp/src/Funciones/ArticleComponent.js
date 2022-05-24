@@ -6,7 +6,6 @@ async function GetAllNEWS(){
     try{
         const respuesta = await fetch(`${API_URL}`);
         const data = await respuesta.json();
-        console.log(data.results.title)
         return data.results;
     }catch(error){
         window.alert(error);
