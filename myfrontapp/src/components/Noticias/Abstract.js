@@ -10,12 +10,14 @@ function Abstract(){
     useEffect( () => {
         GetAllNEWS().then(setTodasNews);
       }, []);
+    
+    const listItem = TodasNews.slice(0,6).map((news) =>(
+      <NewsCard key={news.title} news={news} />
+    ));
 
     return (
             <ul className="newsGrid">
-              {TodasNews.map((news) =>(
-                <NewsCard key={news.title} news={news} />
-              ))}
+              {listItem}
             </ul>
 
     );
