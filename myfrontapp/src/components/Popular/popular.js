@@ -1,5 +1,6 @@
 import React from "react";
 import './popular.css';
+import Carruselimg from '../../Assets/img/Estudiante-Hero.jpg';
 import { Carousel } from 'react-bootstrap';
 
 function PopularCarousel(props){
@@ -8,8 +9,8 @@ function PopularCarousel(props){
         <Carousel>
         <Carousel.Item>
           <img
-            className="justify-content-md-center w-40 h-0"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/448.svg"
+            className="justify-content-md-center w-40 h-30"
+            src={Carruselimg}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -20,7 +21,7 @@ function PopularCarousel(props){
         <Carousel.Item>
           <img
             className="justify-content-md-center w-40 h-30"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/448.svg"
+            src={Carruselimg}
             alt="Second slide"
           />
       
@@ -32,7 +33,7 @@ function PopularCarousel(props){
         <Carousel.Item>
           <img
             className="justify-content-md-center w-40 h-30"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/448.svg"
+            src={Carruselimg}
             alt="Third slide"
           />
       
