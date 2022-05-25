@@ -1,4 +1,5 @@
 import './App.css';
+import Headernav from './components/navbar/navbar';
 import Abstract from './components/Noticias/Abstract';
 
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <div className='App'>
         <header className='header-content'>
-
+          <Headernav/>
         </header>
         <main className='main-content'>
           <div className='Hero'>

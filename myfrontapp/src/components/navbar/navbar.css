@@ -1,0 +1,17 @@
+.Navegador{
+    background-color: #1E2029;
+    text-align: left;
+
+}
+
+.Titulo{
+    color: white;
+}
+
+.Manejadro-menu{
+    color: white;
+}
+
+.objeto-menu:hover{
+    color: #9a6aff;
+}
