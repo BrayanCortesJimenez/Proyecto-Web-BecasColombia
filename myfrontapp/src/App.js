@@ -1,6 +1,7 @@
 import './App.css';
 import Headernav from './components/navbar/navbar';
 import Abstract from './components/Noticias/Abstract';
+import PopularCarousel from './components/Popular/popular';
 
 
 function App() {
@@ -15,10 +16,10 @@ function App() {
 
           </div>
           <div className='Most-popular'>
-
+            <PopularCarousel/>
           </div>
           <div className='News'>
-            <h1 className='Title-News'>Seccion de Noticias</h1>
+            <h1 className='Title-News'>Noticias</h1>
             <Abstract/>
           </div>
           
