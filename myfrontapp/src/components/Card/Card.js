@@ -1,16 +1,19 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 import './Card.css';
 
 function NewsCard({news}){
 
     return(
-       <li className="newsCard">
-        <a className="title" href={news.url}>{news.title}</a>
-        <a href={news.url}>
-            <img className="newsImage" src ={news.multimedia[2].url} alt={news.title}/>
-        </a>
-        <p className="Abstract">{news.abstract}</p>
-        </li> 
+        <Card >
+            <a href={news.url}><Card.Img variant="top" src={news.multimedia[2].url} alt={news.title}/></a>
+            <Card.Body>
+                <Card.Title className="Title-card">{news.title}</Card.Title>
+                <Card.Text>
+                    {news.abstract}
+                </Card.Text>
+            </Card.Body>
+        </Card>
     );
 }
 

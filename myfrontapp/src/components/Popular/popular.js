@@ -9,7 +9,7 @@ function PopularCarousel(props){
         <Carousel>
         <Carousel.Item>
           <img
-            className="justify-content-md-center w-40 h-30"
+            className="container-lg my-3"
             src={Carruselimg}
             alt="First slide"
           />
@@ -20,7 +20,7 @@ function PopularCarousel(props){
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="justify-content-md-center w-40 h-30"
+            className="container-lg my-3"
             src={Carruselimg}
             alt="Second slide"
           />
@@ -32,7 +32,7 @@ function PopularCarousel(props){
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="justify-content-md-center w-40 h-30"
+            className="container-lg my-3"
             src={Carruselimg}
             alt="Third slide"
           />

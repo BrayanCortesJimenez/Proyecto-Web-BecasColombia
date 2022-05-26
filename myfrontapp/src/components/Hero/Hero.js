@@ -8,9 +8,9 @@ function HeroImagen(props){
     return(
         <Figure>
             <Figure.Image
-                width={860}
-                height={422}
-                alt="860x422"
+                width={1200}
+                height={500}
+                alt="860x500"
                 src={HeroPrincipal}
             />
             <Figure.Caption>

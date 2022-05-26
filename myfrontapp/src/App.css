@@ -1,10 +1,24 @@
-.main-content {
-  text-align: center;
+html{
   background-color: #1E2029;
 }
 
-.Title-News {
-  text-align:inherit;
-  color: white;
+.main-content {
+  text-align: center;
+  background-color: #1E2029;
+  width: 100%;
+  height: 100%;
 }
 
+.Title-News {
+  text-align:center;
+  color: white;
+
+}
+
+.Most-popular{
+  margin-top: 5%;
+}
+
+.News{
+  margin-top: 5%;
+}

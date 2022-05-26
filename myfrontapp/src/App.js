@@ -1,8 +1,8 @@
-import './App.css';
 import HeroImagen from './components/Hero/Hero';
 import Headernav from './components/navbar/navbar';
 import Abstract from './components/Noticias/Abstract';
 import PopularCarousel from './components/Popular/popular';
+import './App.css';
 
 
 function App() {
@@ -22,12 +22,8 @@ function App() {
           <div className='News'>
             <h1 className='Title-News'>Noticias</h1>
             <Abstract/>
-          </div>
-          
+          </div>  
         </main>
-        <footer className='footer-content'>
-
-        </footer>
     </div>
   );
 }
