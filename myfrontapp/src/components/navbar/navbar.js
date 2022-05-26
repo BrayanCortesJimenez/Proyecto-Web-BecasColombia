@@ -7,15 +7,14 @@ function Headernav(props){
     return(
         <Navbar className="Navegador" variant="dark" >
             <Container>
-                <Navbar.Brand className="me-left" href="#Home">BecasColombia.com</Navbar.Brand>
+                <Navbar.Brand className="me-left" href="/">BecasColombia.com</Navbar.Brand>
                     <Nav className="me-rigth">
-                        <Nav.Link  href="#">Becas Nacionales</Nav.Link>
-                        <Nav.Link  href="#">Becas Internacionales</Nav.Link>
-                        <Nav.Link  href="#">Publicar Beca</Nav.Link>
+                        <Nav.Link  href="/BecasNacionales">Becas Nacionales</Nav.Link>
+                        <Nav.Link  href="/BecasInternacionales">Becas Internacionales</Nav.Link>
+                        <Nav.Link  href="/PublicarBeca">Publicar Beca</Nav.Link>
                     </Nav>
             </Container>
-        </Navbar>
-       
+        </Navbar>   
     );
 }
 

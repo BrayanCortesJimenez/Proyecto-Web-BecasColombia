@@ -4,10 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import Headernav from './components/navbar/navbar';
+import BecasNacionales from './components/Nacionales/BecasNacionales';
+import BecasInteracionales from './components/Internacionales/BecasInternacionales';
+import CrearBeca from './components/PublicarBeca/PublicarBeca';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Headernav/>
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/BecasNacionales' element={<BecasNacionales />} />
+        <Route path='/BecasInternacionales' element={<BecasInteracionales />} />
+        <Route path='/PublicarBeca' element={<CrearBeca />} />
+      </Routes>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
