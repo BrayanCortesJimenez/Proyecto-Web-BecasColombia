@@ -1,5 +1,4 @@
 import HeroImagen from './components/Hero/Hero';
-import Headernav from './components/navbar/navbar';
 import Abstract from './components/Noticias/Abstract';
 import PopularCarousel from './components/Popular/popular';
 import './App.css';
