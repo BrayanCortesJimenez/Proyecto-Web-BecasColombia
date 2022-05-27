@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Headernav from './components/navbar/navbar';
 import BecasNacionales from './components/Nacionales/BecasNacionales';
 import BecasInteracionales from './components/Internacionales/BecasInternacionales';
@@ -19,6 +19,7 @@ ReactDOM.render(
         <Route path='/BecasNacionales' element={<BecasNacionales />} />
         <Route path='/BecasInternacionales' element={<BecasInteracionales />} />
         <Route path='/PublicarBeca' element={<CrearBeca />} />
+        <Route path='/UpdateBeca/:id' element={<CrearBeca />} />
       </Routes>
     </Router>
   </React.StrictMode>,

@@ -1,10 +1,20 @@
 import React from "react";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
+import {DelteBecas} from "../../Funciones/BackBecas.js";
 import './CardShowBeca.css';
 import BecaImg from '../../Assets/img/Grado.jpg';
 
 
 function CardShowBecas({beca}){
+
+    const handleDelete = async (becaId)=>{
+      await DelteBecas(becaId);
+      if(beca.pais === "Colombia" || beca.pais === "colombia"){
+        window.location.replace("/BecasNacionales");   
+      }else{
+        window.location.replace("/BecasInternacionales");  
+      }
+    };
 
     return(
             <Card border="info" style={{ width: '18rem' }}>
@@ -19,8 +29,8 @@ function CardShowBecas({beca}){
                     <ListGroupItem>Requerimientos:{beca.requerimientos}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <Button className="btn btn-primary">Actualizar</Button>
-                    <Button className="btn btn-danger">Eliminar</Button>
+                    <Button onClick={()=> window.location.replace(`/UpdateBeca/${beca.id}`)} className="btn btn-primary px-5 mx-5">Actualizar</Button>
+                    <Button onClick={()=>beca.id && handleDelete(beca.id)} className="btn btn-danger px-5 mx-5 my-3">Eliminar</Button>
                 </Card.Body>
             </Card>
     );

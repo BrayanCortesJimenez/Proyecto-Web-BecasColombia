@@ -9,16 +9,18 @@ function BecasInternacionales() {
 
   useEffect( () => {
       GetAllBecas().then(setinterBecas);
+      // eslint-disable-next-line
     }, []);
   
 
-  
+    // eslint-disable-next-line
   const listItem = interBecas.map(beca =>{
     
     if (beca.pais !== "Colombia" && beca.pais !== "colombia" )
       return(
       <CardShowBecas key={beca.id} beca={beca} />
       )
+      // eslint-disable-next-line
   });
 
     return (

@@ -31,3 +31,13 @@ export async function registerBecas(newBeca){
 
 }
 
+export async function DelteBecas(becaId){
+    return await fetch(`${APIBECAS_URL}${becaId}`, {
+        method: 'DELETE',
+    });
+}
+
+export async function getBecas(becaId){
+    return await fetch(`${APIBECAS_URL}${becaId}`);
+}
+
