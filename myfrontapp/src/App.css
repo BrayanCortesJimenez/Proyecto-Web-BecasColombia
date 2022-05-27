@@ -16,7 +16,9 @@ html{
 }
 
 .Most-popular{
-  margin-top: 5%;
+  background-color: #1E2029;
+  margin-top: 0.1%;
+  padding-top: 2%;
 }
 
 .News{
