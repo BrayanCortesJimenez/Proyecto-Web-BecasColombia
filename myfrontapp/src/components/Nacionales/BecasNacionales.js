@@ -1,14 +1,34 @@
 import GetAllBecas from '../../Funciones/BackBecas';
+import {useState, useEffect} from 'react';
 import './BecasNacionales.css';
+import CardShowBecas from '../Card/CardShowBeca';
 
 function BecasNacionales() {
   
-    GetAllBecas();
+  const[Becas, setBecas] = useState([]);
+
+  useEffect( () => {
+      GetAllBecas().then(setBecas);
+    }, []);
+  
+
+  
+  const listItem = Becas.map(beca =>{
+    
+    if (beca.pais === "Colombia" || beca.pais === "colombia" )
+      return(
+      <CardShowBecas key={beca.id} beca={beca} />
+      )
+  });
 
     return (
-      <div className='Nacionales'>
-          <h1>BecasNacionales</h1>
-      </div>
+      <main className='Main-Content-Nacionales'>
+        <div><h1>BecasNacionales</h1>
+          <ul className='Nacionales'>
+              {listItem}
+          </ul>
+        </div>
+      </main>
     );
   }
   

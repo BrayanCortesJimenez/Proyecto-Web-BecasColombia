@@ -1,14 +1,14 @@
 import React from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import './CardBecas.css';
-import Carruselimg from '../../Assets/img/Estudiante-Hero.jpg';
+import Carruselimg from '../../Assets/img/persona-estudiando.png';
 
 
 function CardBecas({beca}){
 
     return(
         <div className="CardBeca">
-            <Card className="CardBeca mb-2 card bg-dark text-white" style={{ width: '50rem' }}>
+            <Card className="CardBeca mb-2 card bg-dark text-white" border="white" style={{ width: '50rem' }}>
                 <Card.Img className="Zoom" variant="top" src={Carruselimg} />
                 <Card.Body>
                     <Card.Title>{beca.nombre}</Card.Title>
