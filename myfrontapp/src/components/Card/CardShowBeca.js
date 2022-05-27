@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import './CardShowBeca.css';
 import BecaImg from '../../Assets/img/Grado.jpg';
 
@@ -19,8 +19,8 @@ function CardShowBecas({beca}){
                     <ListGroupItem>Requerimientos:{beca.requerimientos}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <Card.Link href="#"></Card.Link>
-                    <Card.Link href="#"></Card.Link>
+                    <Button className="btn btn-primary">Actualizar</Button>
+                    <Button className="btn btn-danger">Eliminar</Button>
                 </Card.Body>
             </Card>
     );

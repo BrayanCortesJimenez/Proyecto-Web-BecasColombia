@@ -1,13 +1,14 @@
 import './PublicarBeca.css';
+import FormularioBecas from '../Becas/FormBeca';
 
 function CrearBeca() {
   
     return (
       <main className='Main-Content-Publicar-Beca'>
-        <div><h1>Publicar Beca</h1>
-          <ul className='Publicar-Beca'>
-            <li>Hola</li>
-          </ul>
+        <div><h1>Publicar Beca o Actualizar Becas </h1>
+          <div className='Publicar-Beca'>
+            <FormularioBecas/>
+          </div>
         </div>
       </main>
     );

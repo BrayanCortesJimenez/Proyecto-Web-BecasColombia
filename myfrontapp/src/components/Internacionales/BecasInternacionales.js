@@ -15,7 +15,7 @@ function BecasInternacionales() {
   
   const listItem = interBecas.map(beca =>{
     
-    if (beca.pais !== "Colombia" || beca.pais !== "colombia" )
+    if (beca.pais !== "Colombia" && beca.pais !== "colombia" )
       return(
       <CardShowBecas key={beca.id} beca={beca} />
       )
