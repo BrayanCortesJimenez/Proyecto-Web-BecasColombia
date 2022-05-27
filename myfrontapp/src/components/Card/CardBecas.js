@@ -9,7 +9,7 @@ function CardBecas({beca}){
     return(
         <div className="CardBeca">
             <Card className="CardBeca mb-2 card bg-dark text-white" style={{ width: '50rem' }}>
-                <Card.Img variant="top" src={Carruselimg} />
+                <Card.Img className="Zoom" variant="top" src={Carruselimg} />
                 <Card.Body>
                     <Card.Title>{beca.nombre}</Card.Title>
                 </Card.Body>

@@ -1,4 +1,9 @@
 .CardBeca{
+    text-align: flex;
     background-color: #1E2029;
     margin-left: 16%;
 }
+
+.Zoom:hover{
+    transform: scale(1.05);
+  }
