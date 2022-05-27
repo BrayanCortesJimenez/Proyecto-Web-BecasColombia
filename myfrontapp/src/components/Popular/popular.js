@@ -1,46 +1,55 @@
 import React from "react";
+import { Carousel} from 'react-bootstrap';
+import {useState, useEffect} from 'react';
+import GetAllBecas from "../../Funciones/BackBecas";
 import './popular.css';
-import Carruselimg from '../../Assets/img/Estudiante-Hero.jpg';
-import { Carousel } from 'react-bootstrap';
+import CardBecas from "../Card/CardBecas";
 
-function PopularCarousel(props){
+function PopularCarousel(){
+
+  const[AllBecas, setAllBecas] = useState([]);
+
+  useEffect( () => {
+      GetAllBecas().then(setAllBecas);
+    }, []);
+    
+
+  const Becapopular1 = AllBecas.slice((AllBecas.length)-1,AllBecas.length).map(beca =>{
+    return(
+      <CardBecas key={beca.id} beca={beca} />
+    );
+  
+  
+
+  });
+  const Becapopular2 = AllBecas.slice((AllBecas.length)-2,AllBecas.length-1).map(beca =>{
+    return(
+      <CardBecas key={beca.id} beca={beca} />
+    );
+  
+  
+
+  });
+  const Becapopular3 = AllBecas.slice((AllBecas.length)-3,AllBecas.length-2).map(beca =>{
+    return(
+      <CardBecas key={beca.id} beca={beca} />
+    );
+  
+  
+
+  });
+  
 
     return(
         <Carousel>
         <Carousel.Item>
-          <img
-            className="container-lg my-3"
-            src={Carruselimg}
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
+          {Becapopular1}
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="container-lg my-3"
-            src={Carruselimg}
-            alt="Second slide"
-          />
-      
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
+          {Becapopular2}
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="container-lg my-3"
-            src={Carruselimg}
-            alt="Third slide"
-          />
-      
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
+          {Becapopular3}
         </Carousel.Item>
       </Carousel> 
     );

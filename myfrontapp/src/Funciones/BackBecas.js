@@ -5,11 +5,11 @@ async function GetAllBecas(){
     try{
         const respuesta = await fetch(`${APIBECAS_URL}`);
         const data = await respuesta.json();
-        console.log(data)
-        return data;
+        console.log(data.becas)
+        return data.becas;
     }catch(error){
         window.alert(error);
     }
 }
 
-export default GetAllBecas
+export default GetAllBecas;
