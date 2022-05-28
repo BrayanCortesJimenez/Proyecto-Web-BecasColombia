@@ -5,7 +5,7 @@ function CrearBeca() {
   
     return (
       <main className='Main-Content-Publicar-Beca'>
-        <div><h1>Publicar Beca o Actualizar Becas </h1>
+        <div>
           <div className='Publicar-Beca'>
             <FormularioBecas/>
           </div>

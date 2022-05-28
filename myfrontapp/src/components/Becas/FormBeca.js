@@ -69,6 +69,16 @@ function FormularioBecas(){
 
     return(
         <Form onSubmit={handleSubmit} className="col-md-5 mx-auto bg-dark text-white">
+            <div>
+                {
+                    params.id?(
+                        <h1>Actualizar Beca</h1>
+
+                    ):(
+                        <h1>Publicar Beca</h1>
+                    )
+                }
+            </div>
             <Form.Group className="col-mb-3 mx-auto" controlId="formTituloBeca">
                 <Form.Label>Titulo Beca</Form.Label>
                 <Form.Control type="text" name="nombre" value={BecaNueva.nombre} onChange={handleInputChange} placeholder="Ingrese el titulo de la beca" />
