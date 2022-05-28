@@ -9,16 +9,18 @@ function BecasNacionales() {
 
   useEffect( () => {
       GetAllBecas().then(setBecas);
+      // eslint-disable-next-line
     }, []);
   
 
-  
+    // eslint-disable-next-line
   const listItem = Becas.map(beca =>{
     
     if (beca.pais === "Colombia" || beca.pais === "colombia" )
       return(
       <CardShowBecas key={beca.id} beca={beca} />
       )
+      // eslint-disable-next-line
   });
 
     return (
