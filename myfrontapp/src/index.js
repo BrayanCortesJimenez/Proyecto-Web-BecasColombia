@@ -9,6 +9,7 @@ import Headernav from './components/navbar/navbar';
 import BecasNacionales from './components/Nacionales/BecasNacionales';
 import BecasInteracionales from './components/Internacionales/BecasInternacionales';
 import CrearBeca from './components/PublicarBeca/PublicarBeca';
+import VerDetalles from './components/VerDetalles/verDetalles';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route path='/BecasInternacionales' element={<BecasInteracionales />} />
         <Route path='/PublicarBeca' element={<CrearBeca />} />
         <Route path='/UpdateBeca/:id' element={<CrearBeca />} />
+        <Route path='/VerDetalles/:id' element={<VerDetalles />} />
       </Routes>
     </Router>
   </React.StrictMode>,

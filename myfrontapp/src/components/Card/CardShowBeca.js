@@ -17,7 +17,7 @@ function CardShowBecas({beca}){
     };
 
     return(
-            <Card border="info" style={{ width: '18rem' }}>
+            <Card border="info" style={{ width: '19rem' }}>
                 <Card.Img className="Zoom" variant="top" src={BecaImg} />
                 <Card.Body>
                     <Card.Title className="Titulo-Beca text-dark">{beca.nombre}</Card.Title>
@@ -29,8 +29,9 @@ function CardShowBecas({beca}){
                     <ListGroupItem>Requerimientos:{beca.requerimientos}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <Button onClick={()=> window.location.replace(`/UpdateBeca/${beca.id}`)} className="btn btn-primary px-5 mx-5">Actualizar</Button>
-                    <Button onClick={()=>beca.id && handleDelete(beca.id)} className="btn btn-danger px-5 mx-5 my-3">Eliminar</Button>
+                    <Button onClick={()=> window.location.replace(`/UpdateBeca/${beca.id}`)} className="btn btn-block btn-primary">Actualizar</Button>
+                    <Button onClick={()=>beca.id && handleDelete(beca.id)} className="btn btn-block btn-danger">Eliminar</Button>
+                    <Button onClick={()=>window.location.replace(`/VerDetalles/${beca.id}`)}className="btn btn-block btn-success ">Detalles</Button>
                 </Card.Body>
             </Card>
     );
