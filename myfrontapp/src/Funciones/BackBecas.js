@@ -7,7 +7,6 @@ export default async function GetAllBecas(){
     try{
         const respuesta = await fetch(`${APIBECAS_URL}`);
         const data = await respuesta.json();
-        console.log(data.becas)
         return data.becas;
     }catch(error){
         window.alert(error);
@@ -26,6 +25,23 @@ export async function registerBecas(newBeca){
             "pais": String(newBeca.pais),
             "universidad": String(newBeca.universidad),
             "requerimientos": String(newBeca.requerimientos),
+        })
+    } );
+
+}
+
+export async function updateBecas(becaId,updatedBeca){
+    return await fetch(`${APIBECAS_URL}${becaId}`, {
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "nombre": String(updatedBeca.nombre),
+            "porcentaje": parseInt(updatedBeca.porcentaje),
+            "pais": String(updatedBeca.pais),
+            "universidad": String(updatedBeca.universidad),
+            "requerimientos": String(updatedBeca.requerimientos),
         })
     } );
 

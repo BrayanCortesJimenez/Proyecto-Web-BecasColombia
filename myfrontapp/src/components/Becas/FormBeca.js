@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from 'react';
-import {registerBecas, getBecas} from "../../Funciones/BackBecas.js";
+import {registerBecas, getBecas, updateBecas} from "../../Funciones/BackBecas.js";
 import './FormBeca.css';
 
 
@@ -19,16 +19,31 @@ function FormularioBecas(){
         setBecaNueva({ ...BecaNueva, [e.target.name]: e.target.value});
     };
 
+
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
             let res;
-            res = await registerBecas(BecaNueva);
-            const data = await res.json();
-            if(data.message === "Success"){
+            if(!params.id){
+                res = await registerBecas(BecaNueva);
+                const data = await res.json();
+                if(data.message === "Success"){
                 setBecaNueva(initialSatate);
-                window.location.replace("/");
+                if(BecaNueva.pais === "Colombia" || BecaNueva.pais === "colombia"){
+                    window.location.replace("/BecasNacionales");
+                }else{
+                    window.location.replace("/BecasInternacionales");
+                }
+                }
+            }else{
+                await updateBecas(params.id,BecaNueva);
+                if(BecaNueva.pais === "Colombia" || BecaNueva.pais === "colombia"){
+                    window.location.replace("/BecasNacionales");
+                }else{
+                    window.location.replace("/BecasInternacionales");
+                }
             }
+            
         }catch(error){
             console.log(error);
         }
@@ -38,23 +53,22 @@ function FormularioBecas(){
         try{
             const res=await getBecas(becaId);
             const data= await res.json();
-            console.log(data);
-            const { nombre, porcentaje, pais, universidad, requerimientos} = data.becas;
-            setBecaNueva({ nombre:nombre, porcentaje:porcentaje, pais:pais, universidad:universidad, requerimientos:requerimientos});
+            const { nombre, porcentaje, pais, universidad, requerimientos} = data.becas[0];
+            setBecaNueva({ nombre, porcentaje, pais, universidad, requerimientos});
         }catch(error){
-            console.log(error)
+            console.log(error);
         }
     };
 
     useEffect(() =>{
         if(params.id){
-          getBeca(params.id)  
+          getBeca(params.id);  
         }
         // eslint-disable-next-line
-    })
+    }, []);
 
     return(
-        <Form onSubmit={handleSubmit} className="col-md-3 mx-auto bg-dark text-white">
+        <Form onSubmit={handleSubmit} className="col-md-5 mx-auto bg-dark text-white">
             <Form.Group className="col-mb-3 mx-auto" controlId="formTituloBeca">
                 <Form.Label>Titulo Beca</Form.Label>
                 <Form.Control type="text" name="nombre" value={BecaNueva.nombre} onChange={handleInputChange} placeholder="Ingrese el titulo de la beca" />
@@ -75,9 +89,20 @@ function FormularioBecas(){
                 <Form.Label>Requerimiento</Form.Label>
                 <Form.Control type="text" name="requerimientos" value={BecaNueva.requerimientos} onChange={handleInputChange} placeholder="Ingrese el requerimiento de la beca" />
             </Form.Group>
-            <Button className="btn btn-primary px-5 mx-5" variant="primary" type="submit">
-                Crear Beca
-            </Button>
+            <div className="d-grid gap-2">
+                {
+                    params.id?(
+                        <Button className="btn btn-block btn-warning" variant="warning" type="submit">
+                            Actualizar
+                        </Button>
+
+                    ):(
+                        <Button className="btn btn-block btn-primary" variant="primary" type="submit">
+                            Crear Beca
+                        </Button>
+                    )
+                }
+            </div>
         </Form>
     );
 }
