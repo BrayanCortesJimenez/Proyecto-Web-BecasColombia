@@ -1,0 +1,26 @@
+html{
+  background-color: #1E2029;
+}
+
+.main-content {
+  text-align: center;
+  background-color: #1E2029;
+  width: 100%;
+  height: 100%;
+}
+
+.Title-News {
+  text-align:center;
+  color: white;
+
+}
+
+.Most-popular{
+  background-color: #1E2029;
+  margin-top: 0.1%;
+  padding-top: 2%;
+}
+
+.News{
+  margin-top: 5%;
+}
