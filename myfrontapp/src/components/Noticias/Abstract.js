@@ -19,7 +19,6 @@ function Abstract(){
             <ul className="newsGrid">
               {listItem}
             </ul>
-
     );
    
 }
